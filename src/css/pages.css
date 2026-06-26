@@ -2566,3 +2566,90 @@ nav.bottom-nav img {
     border-radius: 28px 28px 0 0 !important;
   }
 }
+
+/* ─────────────────────────────
+   FIX DEFINITIVO — ESCONDER MENU QUANDO MODAL ESTIVER ABERTO
+   Resolve botão do modal ficando atrás da bottom nav
+───────────────────────────── */
+
+/* Sobe qualquer modal/bottom sheet acima do menu */
+[class*="modal"],
+[class*="Modal"],
+[class*="sheet"],
+[class*="Sheet"],
+[class*="drawer"],
+[class*="Drawer"],
+[role="dialog"] {
+  z-index: 30000 !important;
+}
+
+/* Sobe overlays/backdrops acima do menu */
+[class*="overlay"],
+[class*="Overlay"],
+[class*="backdrop"],
+[class*="Backdrop"] {
+  z-index: 29999 !important;
+}
+
+/* Menu inferior fica abaixo dos modais */
+.bottom-nav,
+.app-bottom-nav,
+.mobile-bottom-nav,
+nav.bottom-nav {
+  z-index: 1000 !important;
+}
+
+/* Se houver modal dentro da tela, esconde o menu inferior */
+body:has([class*="modal"]) .bottom-nav,
+body:has([class*="Modal"]) .bottom-nav,
+body:has([class*="sheet"]) .bottom-nav,
+body:has([class*="Sheet"]) .bottom-nav,
+body:has([class*="drawer"]) .bottom-nav,
+body:has([class*="Drawer"]) .bottom-nav,
+body:has([role="dialog"]) .bottom-nav,
+body:has([class*="modal"]) .app-bottom-nav,
+body:has([class*="Modal"]) .app-bottom-nav,
+body:has([class*="sheet"]) .app-bottom-nav,
+body:has([class*="Sheet"]) .app-bottom-nav,
+body:has([class*="drawer"]) .app-bottom-nav,
+body:has([class*="Drawer"]) .app-bottom-nav,
+body:has([role="dialog"]) .app-bottom-nav,
+body:has([class*="modal"]) .mobile-bottom-nav,
+body:has([class*="Modal"]) .mobile-bottom-nav,
+body:has([class*="sheet"]) .mobile-bottom-nav,
+body:has([class*="Sheet"]) .mobile-bottom-nav,
+body:has([class*="drawer"]) .mobile-bottom-nav,
+body:has([class*="Drawer"]) .mobile-bottom-nav,
+body:has([role="dialog"]) .mobile-bottom-nav,
+body:has([class*="modal"]) nav.bottom-nav,
+body:has([class*="Modal"]) nav.bottom-nav,
+body:has([class*="sheet"]) nav.bottom-nav,
+body:has([class*="Sheet"]) nav.bottom-nav,
+body:has([class*="drawer"]) nav.bottom-nav,
+body:has([class*="Drawer"]) nav.bottom-nav,
+body:has([role="dialog"]) nav.bottom-nav {
+  display: none !important;
+}
+
+/* Dá respiro no final do modal para o botão aparecer */
+[class*="modal"] form,
+[class*="Modal"] form,
+[class*="sheet"] form,
+[class*="Sheet"] form,
+[class*="drawer"] form,
+[class*="Drawer"] form,
+[role="dialog"] form {
+  padding-bottom: 32px !important;
+}
+
+/* Garante que o botão final do modal fique visível */
+[class*="modal"] button,
+[class*="Modal"] button,
+[class*="sheet"] button,
+[class*="Sheet"] button,
+[class*="drawer"] button,
+[class*="Drawer"] button,
+[role="dialog"] button {
+  position: relative !important;
+  z-index: 30001 !important;
+}

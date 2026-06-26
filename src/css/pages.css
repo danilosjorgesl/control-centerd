@@ -2494,3 +2494,75 @@ nav.bottom-nav img {
     padding-bottom: 124px !important;
   }
 }
+
+/* ─────────────────────────────
+   FIX MODAL ABOVE BOTTOM NAV MOBILE
+   Impede o menu inferior de cobrir botões dos modais
+───────────────────────────── */
+
+.modal-overlay,
+.money-modal-overlay,
+.quick-action-modal-overlay,
+.action-modal-overlay {
+  align-items: flex-end !important;
+  padding-bottom: calc(96px + env(safe-area-inset-bottom)) !important;
+}
+
+.modal,
+.money-modal,
+.quick-action-modal,
+.action-modal {
+  max-height: calc(100dvh - 130px) !important;
+  overflow-y: auto !important;
+  padding-bottom: calc(28px + env(safe-area-inset-bottom)) !important;
+  margin-bottom: 0 !important;
+}
+
+.modal form,
+.money-modal form,
+.quick-action-modal form,
+.action-modal form {
+  padding-bottom: 24px !important;
+}
+
+.modal button[type="submit"],
+.money-modal button[type="submit"],
+.quick-action-modal button[type="submit"],
+.action-modal button[type="submit"],
+.modal .btn-primary,
+.money-modal .btn-primary,
+.quick-action-modal .btn-primary,
+.action-modal .btn-primary {
+  position: relative !important;
+  z-index: 10001 !important;
+  margin-bottom: 12px !important;
+}
+
+/* Se o modal usa bottom sheet direto */
+.modal-sheet,
+.money-action-sheet,
+.quick-action-sheet,
+.action-sheet {
+  bottom: calc(88px + env(safe-area-inset-bottom)) !important;
+  max-height: calc(100dvh - 130px) !important;
+  overflow-y: auto !important;
+  padding-bottom: 24px !important;
+}
+
+/* Mobile: garante mais respiro para o botão salvar */
+@media (max-width: 480px) {
+  .modal-overlay,
+  .money-modal-overlay,
+  .quick-action-modal-overlay,
+  .action-modal-overlay {
+    padding-bottom: calc(104px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .modal,
+  .money-modal,
+  .quick-action-modal,
+  .action-modal {
+    max-height: calc(100dvh - 150px) !important;
+    border-radius: 28px 28px 0 0 !important;
+  }
+}

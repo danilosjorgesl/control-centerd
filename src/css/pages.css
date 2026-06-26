@@ -2375,3 +2375,122 @@
 }
 /* END MENU ICON PNG DISPLAY FIX */
 
+/* ─────────────────────────────
+   FIX MOBILE BOTTOM NAV
+   Mantém o menu inferior visível no celular
+───────────────────────────── */
+
+html,
+body {
+  min-height: 100%;
+}
+
+#app,
+#app-container,
+.app-shell,
+.app-container,
+.page-shell,
+.mobile-shell {
+  min-height: 100dvh;
+}
+
+/* Dá espaço para o conteúdo não ficar escondido atrás do menu */
+#page-content,
+.page-content,
+.page,
+.main-content,
+.app-main {
+  padding-bottom: 112px !important;
+}
+
+/* Menu inferior sempre visível */
+.bottom-nav,
+.app-bottom-nav,
+.mobile-bottom-nav,
+nav.bottom-nav {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 0 !important;
+  transform: translateX(-50%) !important;
+
+  width: min(100%, 520px) !important;
+  min-height: 78px !important;
+  height: calc(78px + env(safe-area-inset-bottom)) !important;
+
+  padding: 8px 12px calc(8px + env(safe-area-inset-bottom)) !important;
+
+  background: #ffffff !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.06) !important;
+  box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.08) !important;
+
+  z-index: 9999 !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  align-items: center !important;
+}
+
+/* Itens do menu */
+.bottom-nav a,
+.bottom-nav button,
+.app-bottom-nav a,
+.app-bottom-nav button,
+.mobile-bottom-nav a,
+.mobile-bottom-nav button,
+nav.bottom-nav a,
+nav.bottom-nav button {
+  min-height: 58px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 4px !important;
+
+  font-size: 11px !important;
+  line-height: 1.1 !important;
+  text-decoration: none !important;
+
+  overflow: visible !important;
+}
+
+/* Ícones do menu inferior */
+.bottom-nav svg,
+.bottom-nav img,
+.app-bottom-nav svg,
+.app-bottom-nav img,
+.mobile-bottom-nav svg,
+.mobile-bottom-nav img,
+nav.bottom-nav svg,
+nav.bottom-nav img {
+  width: 24px !important;
+  height: 24px !important;
+  flex: 0 0 auto !important;
+}
+
+/* Ajuste específico para telas pequenas */
+@media (max-width: 480px) {
+  .bottom-nav,
+  .app-bottom-nav,
+  .mobile-bottom-nav,
+  nav.bottom-nav {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    border-radius: 0 !important;
+  }
+
+  #page-content,
+  .page-content,
+  .page,
+  .main-content,
+  .app-main {
+    padding-bottom: 124px !important;
+  }
+}

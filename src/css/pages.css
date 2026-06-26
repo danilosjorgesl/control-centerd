@@ -1512,6 +1512,12 @@
   display: flex; align-items: center; justify-content: center;
   font-size: 22px; flex-shrink: 0;
 }
+.more-menu-icon-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
 .more-row-body { flex: 1; }
 .more-row-title { font-size: 15px; font-weight: 600; color: var(--gray-900); }
 .more-row-sub { font-size: 12px; color: var(--gray-500); margin-top: 1px; }
@@ -2292,3 +2298,80 @@
   font-size: 14px;
   font-weight: 700;
 }
+
+
+/* MENU ICON PNG FINAL FIX */
+.more-menu-icon,
+.more-item-icon,
+.more-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.more-menu-icon-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+  opacity: 1;
+  filter: none;
+}
+/* END MENU ICON PNG FINAL FIX */
+
+
+/* OPERATION RHYTHM STATUS COLOR FIX */
+.status-bad,
+.rhythm-bad,
+.below-average,
+.abaixo-media,
+.operation-below-average,
+[data-status="bad"],
+[data-status="below"],
+[data-status="abaixo"] {
+  color: #EF4444 !important;
+  font-weight: 800;
+}
+
+.status-warning,
+.rhythm-warning,
+.near-average,
+[data-status="warning"] {
+  color: #F59E0B !important;
+  font-weight: 800;
+}
+
+.status-good,
+.rhythm-good,
+.above-average,
+.acima-media,
+[data-status="good"],
+[data-status="above"],
+[data-status="acima"] {
+  color: #22C55E !important;
+  font-weight: 800;
+}
+/* END OPERATION RHYTHM STATUS COLOR FIX */
+
+
+/* MENU ICON PNG DISPLAY FIX */
+.more-menu-icon,
+.more-item-icon,
+.more-card-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+.more-menu-icon-img {
+  width: 42px !important;
+  height: 42px !important;
+  object-fit: contain !important;
+  display: block !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+/* END MENU ICON PNG DISPLAY FIX */
+
